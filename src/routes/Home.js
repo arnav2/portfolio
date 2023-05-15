@@ -5,6 +5,7 @@ import { headerData } from '../data/headerData'
 import { Helmet } from 'react-helmet'
 import Experience from '../components/Experience/Experience'
 import Navbar from "../components/Navbar/Navbar";
+import Contacts from '../components/Contacts/Contact'
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <Navbar />
       <Home />
       <Experience />
+      <Contacts />
     </Box>
   )
 }

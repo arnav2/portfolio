@@ -6,6 +6,7 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 
 import expImgWhite from '../../assets/orangeImages/svg/expImgWhite.svg'
 import expImgBlack from '../../assets/orangeImages/svg/expImgBlack.svg'
+import { Box, Typography } from '@mui/material';
 
 function ExperienceCard({id, company, jobtitle, startYear, endYear}) {
 
@@ -23,28 +24,58 @@ function ExperienceCard({id, company, jobtitle, startYear, endYear}) {
             borderRadius: '20px',
             marginBottom: '1.5rem',
             transition: 'background-color 200ms ease-in-out',
-            backgroundColor:theme.primary30,
+            backgroundColor:theme.primary50,
             "&:hover": {
-                backgroundColor:theme.primary50,
+                backgroundColor:theme.primary80,
             },
         },
+        experienceCardImage: {
+            borderRadius: '50%',
+            width: '55px',
+            height: '55px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0,
+            backgroundColor: theme.primary
+        },
+        experienceCardCompany: {
+            color: theme.primary400,
+            fontFamily: 'var(--primaryFont)',
+            fontSize: '1.225rem',
+            fontWeight: 700
+        },
+        experienceCardDate: {
+            fontFamily: 'var(--primaryFont)',
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            marginBottom: '0.5rem',
+        },
+        experienceCardJob: {
+            fontFamily: 'var(--primaryFont)',
+            fontSize: '1.15rem',
+            fontWeight: 600
+        },
+        
     }));
 
     const classes = useStyles();
 
     return (
-        <Fade bottom>
-            <div key={id} className={`experience-card ${classes.experienceCard}`}>
-                <div className="expcard-img" style={{backgroundColor: theme.primary}}>
-                    <img src={theme.type === 'light' ? expImgBlack : expImgWhite} alt="" />
-                </div>
-                <div className="experience-details">
-                    <h6 style={{color: theme.primary}}>{startYear}-{endYear}</h6>
-                    <h4 style={{color: theme.tertiary}}>{jobtitle}</h4>
-                    <h5 style={{color: theme.tertiary80}}>{company}</h5>
-                </div>
-            </div>
-        </Fade>   
+        <Box key={id} className={classes.experienceCard}>
+            <Fade bottom className={classes.experienceCard} >
+            
+                <Box className={classes.experienceCardImage}>
+                    <img width="36px" pointerEvents="none" src={theme.type === 'light' ? expImgBlack : expImgWhite} alt="" />
+                </Box>
+                <Box sx={{ marginLeft: '0.6rem'}}>
+                    
+                    <Typography variant='h3' className={classes.experienceCardCompany}>{company}</Typography>
+                    <Typography variant='h6' className={classes.experienceCardDate}>{startYear}-{endYear}</Typography>
+                    <Typography variant='h4' className={classes.experienceCardJob}>{jobtitle}</Typography>
+                </Box>
+            </Fade>   
+        </Box>
     )
 }
 

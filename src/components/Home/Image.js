@@ -8,7 +8,6 @@ const Image = () => {
 
     const useStyles = makeStyles((t) => ({
         landingImage: {
-            imgSize: '400px',
             position: 'absolute',
             left: '35%',
             transform: 'translateX(-50%)',
@@ -16,8 +15,21 @@ const Image = () => {
             height: '400px',
             objectFit: 'cover',
             borderRadius: '50%',
+            maxWidth: '100%',
             boxShadow: '0px 0px 30px rgba(0, 0, 0, 0.2)',
-            transition: 'opacity 0.3s'
+            transition: 'opacity 0.3s',
+            [t.breakpoints.down('md')]: {
+                width: '300px',
+                height: '300px',
+            },
+            [t.breakpoints.down('lg')]: {
+                width: '350px',
+                height: '350px'
+            },
+            [t.breakpoints.down('sm')]: {
+                width: '200px',
+                height: '200px',
+            }
         },
     }))
 

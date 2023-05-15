@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { experienceData } from '../../data/experienceData';
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -39,6 +39,12 @@ const Experience = () => {
         justifyContent: 'center',
         marginRight: '2rem'
       },
+      experienceHeading: {
+        fontSize: '3.5rem',
+        fontFamily: 'var(--primaryFont)',
+        marginBottom: '2rem',
+        color: theme.primary
+      }
     }
   ))
 
@@ -51,7 +57,7 @@ const Experience = () => {
           <img src={theme.expimg} alt="" />
         </Box>
         <Box className={classes.experienceDescription}>
-          <h1 style={{color:theme.primary}}>Experience</h1>
+          <Typography variant="h1" className={classes.experienceHeading}>Experience</Typography>
           {experienceData.map(exp =>(
               <ExperienceCard 
                   key={exp.id}

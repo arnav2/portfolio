@@ -1,31 +1,15 @@
-import React, { useContext, useState } from 'react';
-import { NavHashLink as NavLink } from 'react-router-hash-link';
-import Fade from 'react-reveal/Fade';
-import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
-import { HiDocumentText } from 'react-icons/hi';
-import { BsFillGearFill } from 'react-icons/bs';
-import { MdPhone } from 'react-icons/md';
-import { FaUser, FaFolderOpen } from 'react-icons/fa';
+import React, { useContext } from 'react';
 import { makeStyles } from '@mui/styles';
-import Drawer from '@mui/material/Drawer';
-import CloseIcon from '@mui/icons-material/Close';
-
+import MenuIcon from '@mui/icons-material/Menu';
 import { headerData } from '../../data/headerData';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import { Box, Typography } from '@mui/material';
 
 function Navbar() {
-    const { theme, setHandleDrawer } = useContext(ThemeContext);
-
-    const [open, setOpen] = useState(false);
+    const { theme, toggleDrawer } = useContext(ThemeContext);
 
     const handleDrawerOpen = () => {
-        setOpen(true);
-        setHandleDrawer();
-    };
-
-    const handleDrawerClose = () => {
-        setOpen(false);
-        setHandleDrawer();
+        toggleDrawer();
     };
 
     const useStyles = makeStyles((t) => ({
@@ -38,6 +22,20 @@ function Navbar() {
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
+        },
+        navContainer: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            width: '100%',
+            padding: '0 3rem',
+            marginTop: '1rem',
+        },
+        header: {
+            fontFamily: 'BestermindRegular',
+            color: theme.tertiary,
+            fontSize: '3.5rem',
+            userSelect: 'none'
         },
         navMenu: {
             fontSize: '2.5rem',
@@ -131,168 +129,21 @@ function Navbar() {
 
     const classes = useStyles();
 
-    const shortname = (name) => {
-        if (name.length > 12) {
-            return name.split(' ')[0];
-        } else {
-            return name;
-        }
-    };
-
     return (
-        <div className='navbar'>
-            <div className='navbar--container'>
-                <h1 style={{ color: theme.secondary }}>
-                    {shortname(headerData.name)}
-                </h1>
+        <Box className= {classes.navBar}>
+            <Box className={classes.navContainer}>
+                <Typography variant='h1' className={classes.header}>
+                    {headerData.name}
+                </Typography>
 
-                <IoMenuSharp
+                <MenuIcon
                     className={classes.navMenu}
                     onClick={handleDrawerOpen}
                     aria-label='Menu'
                 />
-            </div>
-            <Drawer
-                variant='temporary'
-                onClose={(event, reason) => {
-                    if (reason !== 'backdropClick') {
-                        handleDrawerClose();
-                    } else if (reason !== 'escapeKeyDown') {
-                        handleDrawerClose();
-                    }
-                }}
-                anchor='left'
-                open={open}
-                classes={{ paper: classes.MuiDrawer }}
-                className='drawer'
-                disableScrollLock={true}
-            >
-                <div className='div-closebtn'>
-                    <CloseIcon
-                        onClick={handleDrawerClose}
-                        onKeyDown={(e) => {
-                            if (e.key === ' ' || e.key === 'Enter') {
-                                e.preventDefault();
-                                handleDrawerClose();
-                            }
-                        }}
-                        className={classes.closebtnIcon}
-                        role='button'
-                        tabIndex='0'
-                        aria-label='Close'
-                    />
-                </div>
-                <br />
-
-                <div onClick={handleDrawerClose}>
-                    <div className='navLink--container'>
-                        <Fade left>
-                            <NavLink
-                                to='/'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <div className={classes.drawerItem}>
-                                    <IoHomeSharp
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Home
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
-
-                        <Fade left>
-                            <NavLink
-                                to='/#about'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <div className={classes.drawerItem}>
-                                    <FaUser className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>
-                                        About
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
-
-                        <Fade left>
-                            <NavLink
-                                to='/#resume'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <div className={classes.drawerItem}>
-                                    <HiDocumentText
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Resume
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
-
-                        <Fade left>
-                            <NavLink
-                                to='/#services'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <div className={classes.drawerItem}>
-                                    <BsFillGearFill
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Services
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
-
-                        <Fade left>
-                            <NavLink
-                                to='/#blog'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <div className={classes.drawerItem}>
-                                    <FaFolderOpen
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Blog
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
-
-                        <Fade left>
-                            <NavLink
-                                to='/#contacts'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <div className={classes.drawerItem}>
-                                    <MdPhone className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>
-                                        Contact
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
-                    </div>
-                </div>
-            </Drawer>
-        </div>
+            </Box>
+            
+        </Box>
     );
 }
 

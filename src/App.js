@@ -7,6 +7,8 @@ import Project from "./routes/Project";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeContext } from "./contexts/ThemeContext";
+import { StyledEngineProvider } from "@mui/material";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -26,12 +28,14 @@ function App() {
   
   return (
     <ThemeProvider theme={theme}>
+      <StyledEngineProvider injectFirst>
       <Router>
         <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
       </Router>
+      </StyledEngineProvider>
     </ThemeProvider>
     // <ThemeProvider theme={theme.darkTheme ? darkTheme : lightTheme}>
     //   <Router>

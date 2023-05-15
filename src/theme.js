@@ -1,4 +1,3 @@
-import { createTheme } from '@mui/material/styles';
 import * as Colors from '@mui/material/colors';
 import orangeThemeboy from './assets/orangeImages/svg/orangeTheme-boy.svg'
 import orangeThemegirl from './assets/orangeImages/svg/orangeTheme-girl.svg'

@@ -1,17 +1,17 @@
-import React from 'react'
-import { FormGroup, FormControlLabel, Switch } from "@mui/material";
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from "../../redux/theme/themeSlice";
+import React, { useContext } from 'react'
+import { FormGroup, FormControlLabel, Switch, Box } from "@mui/material";
+import { useDispatch } from 'react-redux';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 const ToggleSwitch = () => {
     
-    const theme = useSelector((state) => state.theme);
+    const { theme } = useContext(ThemeContext);
     const dispatch = useDispatch();
     
     return (
       // ToggleSwitch component
-        <div
-            style={{
+        <Box
+            sx={{
             position: "absolute",
             bottom: "10px",
             right: "10px",
@@ -21,14 +21,13 @@ const ToggleSwitch = () => {
                 <FormControlLabel
                     control={
                     <Switch
-                        checked={theme.darkTheme}
-                        onChange={() => dispatch(toggleTheme())}
+                        checked={theme}
                     />
                     }
                     label="Toggle Mode"
                 />
             </FormGroup>
-        </div>
+        </Box>
     );
 };
 

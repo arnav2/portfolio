@@ -10,7 +10,12 @@ export const ThemeContext = createContext()
 
 function ThemeContextProvider(props) {
     // eslint-disable-next-line
-    const [theme, setTheme] = useState(orangeThemeDark)
+    const [theme, setTheme] = useState(orangeThemeLight)
+    const [drawerOpen, setDrawerOpen] = useState(false)
+
+    const toggleDrawer = () => {
+        setDrawerOpen(!drawerOpen)
+    }
 
     const toggleContextTheme = () => {
         if (theme === orangeThemeDark) {
@@ -20,8 +25,9 @@ function ThemeContextProvider(props) {
         }
     }
 
+
     return (
-        <ThemeContext.Provider value={{theme, toggleContextTheme}}>
+        <ThemeContext.Provider value={{theme, toggleContextTheme, drawerOpen, toggleDrawer}}>
             {props.children}
         </ThemeContext.Provider>
     )
