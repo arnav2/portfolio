@@ -9,6 +9,7 @@ import { FaUser, FaFolderOpen } from 'react-icons/fa';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { IoHomeSharp } from 'react-icons/io5';
 import { makeStyles } from '@mui/styles';
+import { useLocation } from "react-router";
 
 const MenuLinks = () => {
 
@@ -58,12 +59,17 @@ const MenuLinks = () => {
     }))
 
     const classes = useStyles();
-
+    const location = useLocation();
+    let pathname = location.pathname
+    if (pathname.endsWith('/')){
+        pathname = pathname.slice(0, -1);
+    }
+    
     return (
         <Box sx={{marginTop: '5rem'}}>
             <Fade left>
                 <NavLink
-                    to='/'
+                    to={pathname + '/'}
                     smooth={true}
                     spy='true'
                     duration={2000}
@@ -77,7 +83,7 @@ const MenuLinks = () => {
 
             <Fade left>
                 <NavLink
-                    to='/#about'
+                    to={pathname + '/#about'}
                     smooth={true}
                     spy='true'
                     duration={2000}
@@ -93,7 +99,7 @@ const MenuLinks = () => {
 
             <Fade left>
                 <NavLink
-                    to='/#skills'
+                    to={pathname + '/#skills'}
                     smooth={true}
                     spy='true'
                     duration={2000}
@@ -111,7 +117,7 @@ const MenuLinks = () => {
 
             <Fade left>
                 <NavLink
-                    to='/#experiences'
+                    to={pathname + '/#experiences'}
                     smooth={true}
                     spy='true'
                     duration={2000}
@@ -129,7 +135,7 @@ const MenuLinks = () => {
 
             <Fade left>
                 <NavLink
-                    to='/#blog'
+                    to={pathname + '/#blog'}
                     smooth={true}
                     spy='true'
                     duration={2000}
@@ -147,7 +153,7 @@ const MenuLinks = () => {
 
             <Fade left>
                 <NavLink
-                    to='/#contacts'
+                    to={pathname + '/#contacts'}
                     smooth={true}
                     spy='true'
                     duration={2000}
