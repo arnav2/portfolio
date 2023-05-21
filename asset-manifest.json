@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.30f60a74.css",
-    "main.js": "/portfolio/static/js/main.850049db.js",
+    "main.js": "/portfolio/static/js/main.3c4bf4a5.js",
     "static/media/expOrange.svg": "/portfolio/static/media/expOrange.9383b2df918bf4e0ce67e3f289602562.svg",
     "static/media/Arnav_Goel_resume_april.pdf": "/portfolio/static/media/Arnav_Goel_resume_april.f3f5358fd6e7305ce6cf.pdf",
     "static/media/BestermindRegular.ttf": "/portfolio/static/media/BestermindRegular.e58a192233afb30a6a59.ttf",
@@ -88,10 +88,10 @@
     "static/media/vuetifyjs.svg": "/portfolio/static/media/vuetifyjs.8a22a3ec81ad62e97094feab6e7ee0fb.svg",
     "static/media/bulma.svg": "/portfolio/static/media/bulma.5910d4416e077262d0264109649ab214.svg",
     "main.30f60a74.css.map": "/portfolio/static/css/main.30f60a74.css.map",
-    "main.850049db.js.map": "/portfolio/static/js/main.850049db.js.map"
+    "main.3c4bf4a5.js.map": "/portfolio/static/js/main.3c4bf4a5.js.map"
   },
   "entrypoints": [
     "static/css/main.30f60a74.css",
-    "static/js/main.850049db.js"
+    "static/js/main.3c4bf4a5.js"
   ]
 }
