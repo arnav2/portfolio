@@ -1,13 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 
 import Home from "./routes/Home";
-import NotFound from "./components/NotFound/NotFound";
-import About from "./routes/About";
-import Project from "./routes/Project";
-
-import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import { ThemeContext } from "./contexts/ThemeContext";
 import { StyledEngineProvider } from "@mui/material";
 import { headerData } from './data/headerData'
 import { Helmet } from 'react-helmet'
@@ -20,10 +14,6 @@ import {
 
 import "./style.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
-// import Preloader from "./components/Pre";
-// import ScrollToTop from "./components/ScrollToTop";
-import ToggleSwitch from "./components/ThemeToggle/ToggleSwitch";
 
 function App() {
   const theme = createTheme();
@@ -38,7 +28,6 @@ function App() {
         <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
       </StyledEngineProvider>
