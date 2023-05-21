@@ -1,8 +1,6 @@
 import React,{ useContext } from 'react';
 import { makeStyles } from '@mui/styles';
 
-import './Skills.css'
-
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { Typography, Box } from '@mui/material';
 import MyMarquee from './MyMarquee';
@@ -37,7 +35,7 @@ function Skills() {
 
     const classes = useStyles();
     return (
-        <Box className={classes.skills}>
+        <Box id="skills" className={classes.skills}>
             <Box className={classes.skillsHeaderContainer}>
                 <Typography variant='h2' className={classes.skillsHeader}>Skills</Typography>
             </Box>

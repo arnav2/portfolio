@@ -49,7 +49,7 @@ const Experience = () => {
   const classes = useStyles();
 
   return (
-    <Box id="experience" sx={{backgroundColor: theme.secondary}}> 
+    <Box id="experiences" sx={{backgroundColor: theme.secondary}}> 
       <Box className={classes.experienceBody}>
         <Box className={classes.experienceImage}>
           <img width="100%" src={theme.expimg} alt="" />

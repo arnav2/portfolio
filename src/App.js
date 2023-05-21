@@ -43,22 +43,6 @@ function App() {
       </Router>
       </StyledEngineProvider>
     </ThemeProvider>
-    // <ThemeProvider theme={theme.darkTheme ? darkTheme : lightTheme}>
-    //   <Router>
-    //     <Navbar />
-    //     <div className="App" id={load ? "no-scroll" : "scroll"}>
-    //     <Routes>
-    //       <Route path="/test" element={<Home />} />
-    //       <Route path="/project" element={<Project />} />
-    //       <Route path="/about" element={<About />} />
-    //       <Route path="*" element={<Navigate to="/"/>} />
-    //     </Routes>
-    //     </div>
-    //     <ToggleSwitch />
-    //     <Footer />
-    //   </Router>
-      
-    // </ThemeProvider>
   );
 }
 

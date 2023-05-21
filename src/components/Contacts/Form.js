@@ -1,6 +1,7 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import { Snackbar, IconButton, SnackbarContent, FormControl, Typography, TextareaAutosize, Button, Box } from '@mui/material';
-import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
+import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutlineOutlined';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import axios from 'axios';
 import isEmail from 'validator/lib/isEmail';
 import { makeStyles } from '@mui/styles';
@@ -44,17 +45,26 @@ const Form = () => {
 
     const { theme } = useContext(ThemeContext);
     const [open, setOpen] = useState(false);
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+    const [name, setName] = useState('test name');
+    const [email, setEmail] = useState('test@example.com');
     const [message, setMessage] = useState('');
 
     const [success, setSuccess] = useState(false);
     const [errMsg, setErrMsg] = useState('');
 
+    useEffect(() => {
+
+        console.log(name)
+        console.log(email)
+        console.log(message)
+        console.log(success)
+
+    }, [name, email, message, success])
+
     const handleContactForm = (e) => {
         e.preventDefault();
 
-        if (name && email && message) {
+        if (name && email) {
             if (isEmail(email)) {
                 const responseData = {
                     name: name,
@@ -66,18 +76,21 @@ const Form = () => {
                     console.log('success');
                     setSuccess(true);
                     setErrMsg('');
-
-                    setName('');
-                    setEmail('');
-                    setMessage('');
-                    setOpen(false);
+                    setTimeout(() => {
+                        console.log('In the set timeout function')
+                        setName('test name');
+                        setEmail('test@example.com');
+                        setMessage('');
+                        setOpen(false);
+                        setSuccess(false);
+                    }, 1000);
                 });
             } else {
                 setErrMsg('Invalid email');
                 setOpen(true);
             }
         } else {
-            setErrMsg('Enter all the fields');
+            setErrMsg('Enter name and email fields');
             setOpen(true);
         }
     };
@@ -144,6 +157,21 @@ const Form = () => {
                 backgroundColor: theme.tertiary,
             },
         },
+        submitIcon: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '5px'
+        },
+        sendIcon: {
+            fontSize: '25px',
+            transformOrigin: 'center',
+            transform: 'translate(5px,-3px) rotate(-30deg)'
+        },
+        successIcon: {
+            fontSize: '28px',
+            transition: 'all 0.3s 0.8s ease-in-out'
+        }
     }))
 
     const classes = useStyles();
@@ -181,35 +209,30 @@ const Form = () => {
                     maxRows={10}
                     inputTheme={theme}
                     label="Message"
+                    onChange={(e) => setMessage(e.target.value)}
                     placeholder='Type your message....'/>
 
-                <Box className='submit-btn'>
+                <Box className={classes.submitBtn}>
                     <Button
                         type='submit'
                         className={classes.submitBtn}
+                        onClick={handleContactForm}
                     >
-                        <Typography>{!success ? 'Send' : 'Sent'}</Typography>
-                        <Box className='submit-icon'>
-                            <AiOutlineSend
-                                className='send-icon'
-                                style={{
-                                    animation: !success
-                                        ? 'initial'
-                                        : 'fly 0.8s linear both',
-                                    position: success
-                                        ? 'absolute'
-                                        : 'initial',
-                                }}
-                            />
-                            <AiOutlineCheckCircle
-                                className='success-icon'
-                                style={{
+                        <Typography>{!success ? 'Send ' : 'Sent '}</Typography>
+                        <Box className={classes.submitIcon}>
+                            {!success && <SendOutlinedIcon
+                                className={classes.sendIcon}
+                            />}
+
+                            {success && <CheckCircleOutlineOutlinedIcon
+                                className={classes.successIcon}
+                                sx={{
                                     display: !success
                                         ? 'none'
                                         : 'inline-flex',
                                     opacity: !success ? '0' : '1',
                                 }}
-                            />
+                            />}
                         </Box>
                     </Button>
                 </Box>

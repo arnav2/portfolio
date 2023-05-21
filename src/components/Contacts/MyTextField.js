@@ -58,10 +58,12 @@ const MyTextField = ({props}) => {
     return (
         <StyledTextField
             inputTheme={theme}
+            required
+            multiline={props.multiline}c
             label={props.value}
             placeholder={props.placeholder}
             variant="outlined"
-            onChange={(e) => props.setFunc(e.target.value)}
+            onChange={(e) => {props.setFunc(e.target.value)}}
             defaultValue={props.defaultValue}
             type={props.type}
             name={props.name}
