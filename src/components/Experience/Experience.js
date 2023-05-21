@@ -11,9 +11,6 @@ const Experience = () => {
   
   const useStyles = makeStyles((t) => (
     {
-      experience: {
-        minHeight: '100vh'
-      },
       experienceBody: {
         display: 'flex',
         flexDirection: 'row',
@@ -40,6 +37,7 @@ const Experience = () => {
         marginRight: '2rem'
       },
       experienceHeading: {
+        fontWeight: 'bold',
         fontSize: '3.5rem',
         fontFamily: 'var(--primaryFont)',
         marginBottom: '2rem',
@@ -51,10 +49,10 @@ const Experience = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.experience} id="experience" sx={{backgroundColor: theme.secondary}}> 
+    <Box id="experience" sx={{backgroundColor: theme.secondary}}> 
       <Box className={classes.experienceBody}>
         <Box className={classes.experienceImage}>
-          <img src={theme.expimg} alt="" />
+          <img width="100%" src={theme.expimg} alt="" />
         </Box>
         <Box className={classes.experienceDescription}>
           <Typography variant="h1" className={classes.experienceHeading}>Experience</Typography>

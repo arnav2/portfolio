@@ -27,6 +27,7 @@ function ExperienceCard({id, company, jobtitle, startYear, endYear}) {
             backgroundColor:theme.primary50,
             "&:hover": {
                 backgroundColor:theme.primary80,
+                transform: 'scale(1.05)'
             },
         },
         experienceCardImage: {

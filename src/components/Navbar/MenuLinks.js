@@ -93,7 +93,7 @@ const MenuLinks = () => {
 
             <Fade left>
                 <NavLink
-                    to='/#resume'
+                    to='/#skills'
                     smooth={true}
                     spy='true'
                     duration={2000}
@@ -103,7 +103,7 @@ const MenuLinks = () => {
                             className={classes.drawerIcon}
                         />
                         <span className={classes.drawerLinks}>
-                            Resume
+                            Skills
                         </span>
                     </Box>
                 </NavLink>
@@ -111,7 +111,7 @@ const MenuLinks = () => {
 
             <Fade left>
                 <NavLink
-                    to='/#services'
+                    to='/#experiences'
                     smooth={true}
                     spy='true'
                     duration={2000}
@@ -121,7 +121,7 @@ const MenuLinks = () => {
                             className={classes.drawerIcon}
                         />
                         <span className={classes.drawerLinks}>
-                            Services
+                            Experiences
                         </span>
                     </Box>
                 </NavLink>
@@ -139,7 +139,7 @@ const MenuLinks = () => {
                             className={classes.drawerIcon}
                         />
                         <span className={classes.drawerLinks}>
-                            Blog
+                            Blogs
                         </span>
                     </Box>
                 </NavLink>

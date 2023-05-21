@@ -1,21 +1,22 @@
 import React from 'react'
 import Home from '../components/Home/Home'
 import { Box } from '@mui/material'
-import { headerData } from '../data/headerData'
-import { Helmet } from 'react-helmet'
+import About from '../components/About/About'
 import Experience from '../components/Experience/Experience'
+import Education from '../components/Education/Education'
 import Navbar from "../components/Navbar/Navbar";
 import Contacts from '../components/Contacts/Contact'
+import Skills from '../components/Skills/Skills'
 
 const HomePage = () => {
   return (
     <Box>
-      <Helmet>
-        <title>{headerData.name} - Porfolio</title>
-      </Helmet>
       <Navbar />
       <Home />
+      <About />
+      <Skills />
       <Experience />
+      <Education />
       <Contacts />
     </Box>
   )

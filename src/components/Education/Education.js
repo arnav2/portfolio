@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
-
-import './Education.css'
+import { Box, Typography } from '@mui/material';
+import { makeStyles } from "@mui/styles";
 import EducationCard from './EducationCard';
 
 import { educationData } from '../../data/educationData'
@@ -10,12 +10,48 @@ import { educationData } from '../../data/educationData'
 function Education() {
 
     const { theme } = useContext(ThemeContext);
+
+    const useStyles = makeStyles((t) => ({
+        educationBody: {
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%'
+        },
+        educationDescription: {
+            width: '100%',
+            flex: '0.65',
+            padding: '2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            marginRight: '7%'
+        },
+        educationHeader: {
+            fontWeight: 'bold',
+            fontSize: '3.5rem',
+            fontFamily: 'var(--primaryFont)',
+            marginBottom: '2rem',
+            color: theme.primary
+        },
+        educationImage: {
+            boxSizing: 'border-box',
+            padding: '1rem',
+            flex: '0.35',
+            marginTop: '1rem',
+            pointerEvents: 'none',
+        }
+    }))
+
+    const classes = useStyles();
+    
     return (
-        <div className="education" id="resume" style={{backgroundColor: theme.secondary}}>
-           
-            <div className="education-body">
-                <div className="education-description">
-                <h1 style={{color:theme.primary}}>Education</h1>
+        <Box sx={{backgroundColor: theme.secondary}}>
+            <Box className={classes.educationBody}>
+                <Box className={classes.educationDescription}>
+                <Typography variant='h1' className={classes.educationHeader}>Education</Typography>
                     {educationData.map(edu => (
                         <EducationCard 
                             key={edu.id}
@@ -26,12 +62,12 @@ function Education() {
                             endYear={edu.endYear}
                         />
                     ))}
-                </div>
-                <div className="education-image">
-                    <img src={theme.eduimg} alt=""/>
-                </div>
-            </div>
-        </div>
+                </Box>
+                <Box className={classes.educationImage}>
+                    <img src={theme.eduimg} alt="" width="100%"/>
+                </Box>
+            </Box>
+        </Box>
     )
 }
 

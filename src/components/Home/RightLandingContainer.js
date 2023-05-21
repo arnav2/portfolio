@@ -7,8 +7,10 @@ import Type from './Type';
 import Buttons from './Buttons';
 const RightLandingContainer = () => {
     const {theme} = useContext(ThemeContext)
-    const useStyles = makeStyles((t) => (
-        {
+    
+    const useStyles = makeStyles((t) => {
+        console.log(t)
+        return {
             rightLandingContainer: {
                 flex: '65%',
                 height: '100%',
@@ -17,7 +19,7 @@ const RightLandingContainer = () => {
                 alignItems: 'flex-end',
                 justifyContent: 'center',
                 backgroundColor: theme.secondary,
-                [t.breakpoints.down['lg']]: {
+                [t.breakpoints.down('md')]: {
                     boxSizing: 'border-box',
                     padding: '0 2rem',
                     flex: 'initial',
@@ -37,7 +39,7 @@ const RightLandingContainer = () => {
                 margin: '1rem 0',
             },
         }
-    ))
+    })
     const classes = useStyles()
 
     return (

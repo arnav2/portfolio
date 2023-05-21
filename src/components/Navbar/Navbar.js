@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { headerData } from '../../data/headerData';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { Box, Typography } from '@mui/material';
+import MyDrawer from './MyDrawer';
 
 function Navbar() {
     const { theme, toggleDrawer } = useContext(ThemeContext);
@@ -35,7 +36,13 @@ function Navbar() {
             fontFamily: 'BestermindRegular',
             color: theme.tertiary,
             fontSize: '3.5rem',
-            userSelect: 'none'
+            userSelect: 'none',
+            [t.breakpoints.down('md')]: {
+                fontSize: '2.5rem',
+            },
+            [t.breakpoints.down('sm')]: {
+                fontSize: '2rem',
+            },
         },
         navMenu: {
             fontSize: '2.5rem',
@@ -52,79 +59,7 @@ function Navbar() {
             [t.breakpoints.down('xs')]: {
                 fontSize: '2rem',
             },
-        },
-        MuiDrawer: {
-            padding: '0em 1.8em',
-            width: '14em',
-            fontFamily: ' var(--primaryFont)',
-            fontStyle: ' normal',
-            fontWeight: ' normal',
-            fontSize: ' 24px',
-            background: theme.secondary,
-            overflow: 'hidden',
-            borderTopRightRadius: '40px',
-            borderBottomRightRadius: '40px',
-            [t.breakpoints.down('sm')]: {
-                width: '12em',
-            },
-        },
-        closebtnIcon: {
-            fontSize: '2rem',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            color: theme.primary,
-            position: 'absolute',
-            right: 40,
-            top: 40,
-            transition: 'color 0.2s',
-            '&:hover': {
-                color: theme.tertiary,
-            },
-            [t.breakpoints.down('sm')]: {
-                right: 20,
-                top: 20,
-            },
-        },
-        drawerItem: {
-            margin: '2rem auto',
-            borderRadius: '78.8418px',
-            background: theme.secondary,
-            color: theme.primary,
-            width: '85%',
-            height: '60px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-            padding: '0 30px',
-            boxSizing: 'border-box',
-            border: '2px solid',
-            borderColor: theme.primary,
-            transition: 'background-color 0.2s, color 0.2s',
-            '&:hover': {
-                background: theme.primary,
-                color: theme.secondary,
-            },
-            [t.breakpoints.down('sm')]: {
-                width: '100%',
-                padding: '0 25px',
-                height: '55px',
-            },
-        },
-        drawerLinks: {
-            fontFamily: 'var(--primaryFont)',
-            width: '50%',
-            fontSize: '1.3rem',
-            fontWeight: 600,
-            [t.breakpoints.down('sm')]: {
-                fontSize: '1.125rem',
-            },
-        },
-        drawerIcon: {
-            fontSize: '1.6rem',
-            [t.breakpoints.down('sm')]: {
-                fontSize: '1.385rem',
-            },
-        },
+        }
     }));
 
     const classes = useStyles();
@@ -142,7 +77,7 @@ function Navbar() {
                     aria-label='Menu'
                 />
             </Box>
-            
+            <MyDrawer />
         </Box>
     );
 }

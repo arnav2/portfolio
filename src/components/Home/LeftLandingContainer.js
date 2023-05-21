@@ -16,7 +16,7 @@ const LeftLandingContainer = () => {
             alignItems: 'flex-end',
             justifyContent: 'flex-start',
             backgroundColor: theme.primary,
-            [t.breakpoints.down['sm']]: {
+            [t.breakpoints.down('sm')]: {
                 flex: 'initial',
                 width: '100%',
                 height: '30%'

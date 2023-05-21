@@ -1,6 +1,5 @@
 import * as Colors from '@mui/material/colors';
 import orangeThemeboy from './assets/orangeImages/svg/orangeTheme-boy.svg'
-import orangeThemegirl from './assets/orangeImages/svg/orangeTheme-girl.svg'
 import contactsOrange from './assets/orangeImages/svg/contactsOrange.svg'
 import eduOrange from './assets/orangeImages/svg/eduOrange.svg'
 import expOrange from './assets/orangeImages/svg/expOrange.svg'
@@ -20,8 +19,7 @@ export const orangeThemeLight = {
   tertiary80: '#212121cc',
   tertiary70: '#212121b3',
   tertiary50: '#21212180',
-  aboutimg1: orangeThemeboy,
-  aboutimg2: orangeThemegirl,
+  aboutimg: orangeThemeboy,
   eduimg: eduOrange,
   expimg: expOrange,
   contactsimg: contactsOrange
@@ -41,8 +39,7 @@ export const orangeThemeDark = {
   tertiary80: '#eaeaeacc',
   tertiary70: '#eaeaeab3',
   tertiary50: '#eaeaea80',
-  aboutimg1: orangeThemeboy,
-  aboutimg2: orangeThemegirl,
+  aboutimg: orangeThemeboy,
   eduimg: eduOrange,
   expimg: expOrange,
   contactsimg: contactsOrange

@@ -20,19 +20,21 @@ function Home() {
             justifyContent: 'center',
             position: 'relative',
             height: '100%',
-            width: '100%'
+            width: '100%',
+            [t.breakpoints.down('md')]: {
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+            }
         }
     }));
     const classes = useStyles()
 
     return (
-        <Box>
-            <Box className={classes.landing}>
-                <Box className={classes.landingContainer}>
-                    <LeftLandingContainer />
-                    <Image />
-                    <RightLandingContainer />
-                </Box>
+        <Box className={classes.landing}>
+            <Box className={classes.landingContainer}>
+                <LeftLandingContainer />
+                <Image />
+                <RightLandingContainer />
             </Box>
         </Box>
     );

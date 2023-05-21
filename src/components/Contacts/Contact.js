@@ -10,7 +10,6 @@ function Contacts() {
 
     const useStyles = makeStyles((t) => ({
         contacts: {
-            minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
@@ -32,7 +31,8 @@ function Contacts() {
             fontFamily: 'var(--primaryFont)',
             fontSize: '3.5rem',
             marginBottom: '2.5rem',
-            color: theme.primary
+            color: theme.primary,
+            fontWeight: 'bold',
         },
         contactsBody: {
             display: 'flex',

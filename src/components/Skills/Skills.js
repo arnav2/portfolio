@@ -1,49 +1,48 @@
 import React,{ useContext } from 'react';
-import Marquee from "react-fast-marquee";
+import { makeStyles } from '@mui/styles';
 
 import './Skills.css'
 
-import { ThemeContext } from '../../../../developer-portfolio/src/contexts/ThemeContext';
-import { skillsData } from '../../../../developer-portfolio/src/data/skillsData'
-import { skillsImage } from '../../../../developer-portfolio/src/utils/skillsImage'
+import { ThemeContext } from '../../contexts/ThemeContext';
+import { Typography, Box } from '@mui/material';
+import MyMarquee from './MyMarquee';
 
 function Skills() {
 
     const { theme } = useContext(ThemeContext);
 
-    const skillBoxStyle = {
-        backgroundColor: theme.secondary,
-        boxShadow: `0px 0px 30px ${theme.primary30}`
-    }
+    const useStyles = makeStyles((t) => ({
+        skills: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            padding: '2.5rem 2rem 2rem 2rem',
+            backgroundColor: theme.secondary,
+        },
+        skillsHeaderContainer: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        },
+        skillsHeader: {
+            fontFamily: 'var(--primaryFont)',
+            fontStyle: 'normal',
+            fontWeight: 'bold',
+            fontSize: '3.5rem',
+            textAlign: 'center',
+            color: theme.primary
+        },
+    }))
 
+    const classes = useStyles();
     return (
-        <div className="skills" style={{backgroundColor: theme.secondary}}>
-            <div className="skillsHeader">
-                <h2 style={{color: theme.primary}}>Skills</h2>
-            </div>
-            <div className="skillsContainer">
-                <div className="skill--scroll">
-                    <Marquee 
-                        gradient={false} 
-                        speed={80} 
-                        pauseOnHover={true}
-                        pauseOnClick={true} 
-                        delay={0}
-                        play={true} 
-                        direction="left"
-                    >
-                        {skillsData.map((skill, id) => (
-                            <div className="skill--box" key={id} style={skillBoxStyle}>
-                                <img src={skillsImage(skill)} alt={skill} />
-                                <h3 style={{color: theme.tertiary}}>
-                                    {skill}
-                                </h3>
-                            </div>
-                        ))}
-                    </Marquee>
-                </div>
-            </div>
-        </div>
+        <Box className={classes.skills}>
+            <Box className={classes.skillsHeaderContainer}>
+                <Typography variant='h2' className={classes.skillsHeader}>Skills</Typography>
+            </Box>
+            <MyMarquee />
+        </Box>
     )
 }
 

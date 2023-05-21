@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import Fade from 'react-reveal/Fade';
 
-import { ThemeContext } from '../../../../developer-portfolio/src/contexts/ThemeContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
-import eduImgWhite from '../../assets/svg/education/eduImgWhite.svg'
-import eduImgBlack from '../../assets/svg/education/eduImgBlack.svg'
-import './Education.css'
+import eduImgWhite from '../../assets/orangeImages/svg/eduImgWhite.svg'
+import eduImgBlack from '../../assets/orangeImages/svg/eduImgBlack.svg'
+import { Box, Typography } from '@mui/material';
 
 function EducationCard({ id, institution, course, startYear, endYear }) {
 
@@ -14,28 +14,66 @@ function EducationCard({ id, institution, course, startYear, endYear }) {
 
     const useStyles = makeStyles((t) => ({
         educationCard : {
-            backgroundColor:theme.primary30,
+            display:'flex',
+            flexDirection: 'row',
+            alignItems: 'flex-start',
+            justifyContent: 'flex-start',
+            width: '90%',
+            height: '140px',
+            padding: '1.5rem',
+            borderRadius: '20px',
+            marginBottom: '1.5rem',
+            transition: 'background-color 200ms ease-in-out',
+            backgroundColor:theme.primary50,
             "&:hover": {
-                backgroundColor:theme.primary50,
+                backgroundColor:theme.primary80,
+                transform: 'scale(1.05)'
             },
+        },
+        educationCardImage: {
+            borderRadius: '50%',
+            width: '55px',
+            height: '55px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0,
+            backgroundColor: theme.primary
+        },
+        educationCardCourse: {
+            color: theme.primary400,
+            fontFamily: 'var(--primaryFont)',
+            fontSize: '1.225rem',
+            fontWeight: 700
+        },
+        educationCardDate: {
+            fontFamily: 'var(--primaryFont)',
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            marginBottom: '0.5rem',
+        },
+        educationCardInstitution: {
+            fontFamily: 'var(--primaryFont)',
+            fontSize: '1.15rem',
+            fontWeight: 600
         },
     }));
 
     const classes = useStyles();
 
     return (
-        <Fade bottom>
-            <div key={id} className={`education-card ${classes.educationCard}`} >
-                <div className="educard-img" style={{backgroundColor: theme.primary}}>
+        <Box key={id} className={classes.educationCard} >
+            <Fade bottom className={classes.educationCard} >
+                <Box className={classes.educationCardImage}>
                     <img src={theme.type === 'light' ? eduImgBlack : eduImgWhite} alt="" />
-                </div>
-                <div className="education-details">
-                    <h6 style={{color: theme.primary}}>{startYear}-{endYear}</h6>
-                    <h4 style={{color: theme.tertiary}}>{course}</h4>
-                    <h5 style={{color: theme.tertiary80}}>{institution}</h5>
-                </div>
-            </div>
-        </Fade>        
+                </Box>
+                <Box sx={{marginLeft: '0.6rem'}}>
+                <Typography variant='h3' className={classes.educationCardCourse}>{course}</Typography>
+                    <Typography variant='h6' className={classes.educationCardDate}>{startYear}-{endYear}</Typography>
+                    <Typography variant='h4' className={classes.educationCardInstitution}>{institution}</Typography>                    
+                </Box>
+            </Fade>
+        </Box>
     )
 }
 
