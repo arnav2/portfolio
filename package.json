@@ -2,7 +2,7 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arnav2.github.io/portfolio",
+  "homepage": "https://arnav2.github.io/",
   "dependencies": {
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.3",
