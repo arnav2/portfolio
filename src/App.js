@@ -30,7 +30,9 @@ function App() {
         <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/portfolio/" element={<Home />} />
           <Route path="/blog" exact element={<BlogPage />} />
+          <Route path="/portfolio/blog" exact element={<BlogPage />} />
         </Routes>
       </Router>
       <BackToTop />
