@@ -2,7 +2,7 @@ import React from "react";
 
 import Home from "./routes/Home";
 import BlogPage from "./routes/BlogPage";
-import ScrollToTop from "./components/BackToTop";
+import ScrollToTop from "./utils/ScrollToTop";
 import { StyledEngineProvider } from "@mui/material";
 import { headerData } from './data/headerData'
 import { Helmet } from 'react-helmet'
@@ -27,7 +27,7 @@ function App() {
         <title>{headerData.name} - Porfolio</title>
       </Helmet>
       <Router>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio/" element={<Home />} />
