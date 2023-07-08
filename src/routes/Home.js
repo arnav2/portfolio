@@ -7,6 +7,7 @@ import Education from '../components/Education/Education'
 import Navbar from "../components/Navbar/Navbar";
 import Contacts from '../components/Contacts/Contact'
 import Skills from '../components/Skills/Skills'
+import Blog from '../components/Blog/Blog'
 
 const HomePage = () => {
   return (
@@ -17,7 +18,9 @@ const HomePage = () => {
       <Skills />
       <Experience />
       <Education />
+      <Blog />
       <Contacts />
+
     </Box>
   )
 }

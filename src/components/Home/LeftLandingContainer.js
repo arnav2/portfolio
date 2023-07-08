@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Box, Link } from '@mui/material';
 import { socialsData } from '../../data/socialsData';
-import { LinkedIn, GitHub, Twitter, Newspaper } from '@mui/icons-material';
+import { LinkedIn, GitHub, Twitter } from '@mui/icons-material';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import {FaMediumM} from 'react-icons/fa';
 
 const LeftLandingContainer = () => {
     const { theme } = useContext(ThemeContext);
@@ -87,16 +88,13 @@ const LeftLandingContainer = () => {
                         />
                     </Link>
                 )}
-                {socialsData.blogger && (
+                {socialsData.medium && (
                     <Link
-                        href={socialsData.blogger}
+                        href={socialsData.medium}
                         target='_blank'
                         rel='noreferrer'
                     >
-                        <Newspaper
-                            className= {classes.homeSocial}
-                            aria-label='Blogger'
-                        />
+                        <FaMediumM className= {classes.homeSocial} aria-label='Medium' />
                     </Link>
                 )}
             </Box>

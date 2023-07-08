@@ -4,8 +4,8 @@ import Fade from 'react-reveal/Fade';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
-import eduImgWhite from '../../assets/orangeImages/svg/eduImgWhite.svg'
-import eduImgBlack from '../../assets/orangeImages/svg/eduImgBlack.svg'
+import eduImgWhite from '../../assets/eduImgWhite.svg'
+import eduImgBlack from '../../assets/eduImgBlack.svg'
 import { Box, Typography } from '@mui/material';
 
 function EducationCard({ id, institution, course, startYear, endYear }) {

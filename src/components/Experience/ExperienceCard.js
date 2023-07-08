@@ -4,8 +4,8 @@ import Fade from 'react-reveal/Fade';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
-import expImgWhite from '../../assets/orangeImages/svg/expImgWhite.svg'
-import expImgBlack from '../../assets/orangeImages/svg/expImgBlack.svg'
+import expImgWhite from '../../assets/expImgWhite.svg'
+import expImgBlack from '../../assets/expImgBlack.svg'
 import { Box, Typography } from '@mui/material';
 
 function ExperienceCard({id, company, jobtitle, startYear, endYear}) {

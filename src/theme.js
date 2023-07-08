@@ -1,8 +1,8 @@
 import * as Colors from '@mui/material/colors';
-import orangeThemeboy from './assets/orangeImages/svg/orangeTheme-boy.svg'
-import contactsOrange from './assets/orangeImages/svg/contactsOrange.svg'
-import eduOrange from './assets/orangeImages/svg/eduOrange.svg'
-import expOrange from './assets/orangeImages/svg/expOrange.svg'
+import orangeThemeboy from './assets/orangeTheme-boy.svg'
+import contactsOrange from './assets/contactsOrange.svg'
+import eduOrange from './assets/eduOrange.svg'
+import expOrange from './assets/expOrange.svg'
 
 export const orangeThemeLight = {
   type: 'light',

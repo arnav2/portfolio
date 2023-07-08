@@ -1,11 +1,12 @@
 import React,{ useContext} from 'react';
 import { Link } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import { HiArrowRight } from "react-icons/hi";
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { blogData } from '../../data/blogData'
 import SingleBlog from './SingleBlog/SingleBlog';
+import { Box, Button, Typography } from '@mui/material';
 
 
 function Blog() {
@@ -13,9 +14,86 @@ function Blog() {
     const { theme } = useContext(ThemeContext);
 
     const useStyles = makeStyles(() => ({
-        viewAllBtn : {
+        blog: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            minHeight: '100vh',
+            padding: '2rem',
+            overflowX: 'hidden',
+            backgroundColor: theme.secondary
+        },
+        blogHeaderDiv: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            margin: '1rem'
+        },
+        blogHeader: {
+            marginBottom: '40px',
+            fontSize: '3.5rem',
+            fontFamily: 'var(--primaryFont)'
+        },
+        blogBody: {
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
+        },
+        blogBodyContainer: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            gap: '4.5rem'
+        },
+        blogViewAll: {
+            width: '100%',
+            marginTop: '1rem',
+            padding: '2rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end'
+        },
+        viewAllLink: {
+            outline: 'none',
+            border: 'none',
+            width: '150px',
+            height: '48px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            textTransform: 'inherit',
+            borderRadius: '45px',
+            fontSize: '1.05rem',
+            fontFamily: 'var(--primaryFont)',
+            fontWeight: 500,
+            paddingLeft: '1.5rem',
+            cursor: 'pointer',
+        },
+        viewAllButton : {
             color: theme.tertiary, 
             backgroundColor: theme.primary,
+            outline: 'none',
+            border: 'none',
+            width: '150px',
+            height: '48px',
+            display: 'flex',
+            whiteSpace: 'nowrap',
+            textAlign: 'center',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            textTransform: 'inherit',
+            borderRadius: '45px',
+            fontSize: '1.05rem',
+            fontFamily: 'var(--primaryFont)',
+            fontWeight: 500,
+            paddingLeft: '1.5rem',
+            cursor: 'pointer',
+            gap: '5px',
             "&:hover": {
                 color: theme.secondary, 
                 backgroundColor: theme.primary,
@@ -37,17 +115,17 @@ function Blog() {
         },
     }));
 
-    const classes = useStyles();
+    const classes = useStyles(theme);
 
     return (
         <>
             {blogData.length > 0 && (
-                <div className="blog" id="blog" style={{backgroundColor: theme.secondary}}>
-                    <div className="blog--header">
-                        <h1 style={{color: theme.primary}}>Blog</h1>
-                    </div>
-                    <div className="blog--body">
-                        <div className="blog--bodyContainer">
+                <Box className={classes.blog} id="blog">
+                    <Box className={classes.blogHeaderDiv}>
+                        <Typography variant='h1' className={classes.blogHeader} style={{color: theme.primary}}>Blog</Typography>
+                    </Box>
+                    <Box className={classes.blogBody}>
+                        <Box className={classes.blogBodyContainer}>
                             {blogData.slice(0, 3).reverse().map(blog => (
                                 <SingleBlog 
                                     theme={theme}
@@ -60,20 +138,20 @@ function Blog() {
                                     id={blog.id}
                                 />
                             ))}
-                        </div> 
+                        </Box>
 
                         {blogData.length > 3 && (
-                            <div className="blog--viewAll">
-                                <Link to="/blog">
-                                    <button className={classes.viewAllBtn}>
+                            <Box className={classes.blogViewAll}>
+                                <Link to="/blog" underline="none" className={classes.viewAllLink} >
+                                    <Button className={classes.viewAllButton}>
                                         View All
                                         <HiArrowRight className={classes.viewArr} />
-                                    </button>
+                                    </Button>
                                 </Link>
-                            </div>
+                            </Box>
                         )}
-                    </div>
-                </div>
+                    </Box>
+                </Box>
             )}
 
         </>

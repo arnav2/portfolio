@@ -1,42 +1,42 @@
 export const blogData = [
     {
         id: 1,
-        title: 'SCRAPING BILLBOARD AND IMDB USING PYTHON SELENIUM',
-        description: 'Here we will use Selenium to navigate between web pages, and try to scrape data from them.',
-        date: 'Aug 7, 2020',
-        image: 'https://1.bp.blogspot.com/-6vZQoWcIZeo/Xvw5ZD5Y53I/AAAAAAAABgI/GH2b5OuMaXAKuigK4diBbeYDW6dD3qVvgCK4BGAsYHg/w400-h225/selenium.jpg',
-        url: 'https://hackzism.blogspot.com/2020/07/scraping-billboard-and-imdb-using.html'
+        title: 'Crowd Counting (Dense Crowd)',
+        description: 'Here we will use different deep learning algorithms to estimate number of people in a crowd',
+        date: 'May 4, 2023',
+        image: 'https://miro.medium.com/v2/resize:fit:2464/format:webp/0*cQF4Xm_xEo6pioEx.jpg',
+        url: 'https://medium.com/@goelarna/crowd-counting-dense-crowd-c3566a98052b'
     },
     {
         id: 2,
-        title: 'CHECK WEATHER FROM TERMINAL USING WTTR.IN',
-        description: 'wttr.in is a console-oriented weather forecast service that supports various information representation methods like ANSI-sequences for console HTTP clients, HTML, or PNG.',
-        date: 'Aug 11, 2020',
-        image: 'https://1.bp.blogspot.com/-OW7jX57tea4/XvnGxuEOslI/AAAAAAAABW0/R8lVT1AXDSwnvE0EGA9Ra49-LDm1ACwDgCK4BGAsYHg/s1216/wttr1.png',
-        url: 'https://hackzism.blogspot.com/2020/06/check-weather-from-terminal-using-wttrin.html'
+        title: 'Tensors: A deep dive',
+        description: "Tensors are multidimensional generalization of scalars and vectors. Let's dig deep into it",
+        date: 'May 10, 2020',
+        image: 'https://miro.medium.com/v2/resize:fit:2400/format:webp/1*K8Ncjomdd-Ur1OaCSrAakQ.jpeg',
+        url: 'https://medium.com/@goelarna/tensors-a-deep-dive-43cc361b7457'
     },
     {
         id: 3,
-        title: 'BEING ANONYMOUS: A BEGINNERS GUIDE',
-        description: 'Here are some basic ways to lay off the Radar',
-        date: 'Aug 14, 2020',
-        image: 'https://1.bp.blogspot.com/-GR19yCNbKCE/XuRcKEfKvhI/AAAAAAAAAwY/srFWw5pOpzMibeJb__SmgZpx9dIpNNWqgCK4BGAsYHg/w640-h426/anonymous1.jpg',
-        url: 'https://hackzism.blogspot.com/2020/06/being-anonymous-beginners-guide.html'
+        title: 'Natural Language Processing Basics',
+        description: 'Understanding the process of basic NLP pipeling from beginning to end',
+        date: 'Jun 1, 2023',
+        image: 'https://miro.medium.com/v2/resize:fit:1400/0*8qUM1DQpeXG0sfnc',
+        url: 'https://medium.com/@goelarna/natural-language-processing-basics-7e4f7d22548c'
     },
     {
         id: 4,
-        title: 'CHECK INTERNET SPEED FROM THE COMMAND LINE',
-        description: 'Want to check your internet speed from the terminal? Here\'s the perfect way to the that.',
-        date: 'Sep 17, 2020',
-        image: 'https://1.bp.blogspot.com/-XTVMsZP3HaM/Xxpl394txlI/AAAAAAAABws/zovXWiuNGg4TzBwYYVFfJ1ixDb3JfVokgCNcBGAsYHQ/w400-h195/speedtest.png',
-        url: 'https://hackzism.blogspot.com/2020/07/check-internet-speed-from-command-line.html'
+        title: 'Creating a basic Tokenizer',
+        description: 'How to create a basic version of the first step of any NLP process',
+        date: 'Jun 3, 2023',
+        image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/0*pTUG0b9D5KFtXhlg.png',
+        url: 'https://goelarna.medium.com/creating-a-basic-tokenizer-54fb6a7641c7'
     },
     {
         id: 5,
-        title: 'GET MICHAEL\'S OR TREVOR\'S VEHICLES FULLY UPGRADED IN GTA V FOR FREE',
-        description: 'In case you haven\'t heard of this game, GTA stands for \'Grand Theft Auto\'. It is an open-world game published by Rockstar Games.',
-        date: 'Oct 1, 2020',
-        image: 'https://1.bp.blogspot.com/-jhdtUBIRD_s/XxLFKQuRz9I/AAAAAAAABsM/mClfbfDFKvsUwA7Wyi25Lzu3DEmL2lxrACNcBGAsYHQ/s1919/gta.jpg',
-        url: 'https://hackzism.blogspot.com/2020/07/how-can-you-get-michaels-or-trevors.html'
+        title: 'Regex for Python developers',
+        description: 'A regular expression (regex or regexp) is a sequence of characters that specifies a match pattern in text. Let\'s understand how it works in detail',
+        date: 'Jun 17, 2023',
+        image: 'https://miro.medium.com/v2/resize:fit:2000/format:webp/0*T2ywHX7_cY0uGJkU.jpg',
+        url: 'https://goelarna.medium.com/regex-for-python-developers-a45050ed3003'
     },
 ]

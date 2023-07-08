@@ -1,10 +1,12 @@
 import React from "react";
 
 import Home from "./routes/Home";
-import ScrollToTop from "./components/ScrollToTop";
+import BlogPage from "./routes/BlogPage";
+import ScrollToTop from "./components/BackToTop";
 import { StyledEngineProvider } from "@mui/material";
 import { headerData } from './data/headerData'
 import { Helmet } from 'react-helmet'
+import BackToTop from './components/BackToTop'
 
 import {
   BrowserRouter as Router,
@@ -28,9 +30,10 @@ function App() {
         <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/portfolio/" element={<Home />} />
+          <Route path="/blog" exact element={<BlogPage />} />
         </Routes>
       </Router>
+      <BackToTop />
       </StyledEngineProvider>
     </ThemeProvider>
   );

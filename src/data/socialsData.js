@@ -3,12 +3,8 @@ export const socialsData = {
     facebook: 'https://www.facebook.com/arnav.goel.54',
     linkedIn: 'https://www.linkedin.com/in/arnav2',
     instagram: 'https://www.instagram.com/goelarna/',
-    codepen: 'https://codepen.io/',
-    twitter: 'https://twitter.com/',
-    reddit: 'https://www.reddit.com/user/',
-    blogger: 'https://www.blogger.com/',
-    medium: 'https://medium.com/@',
+    twitter: 'https://twitter.com/Arnavgoel2Goel',
+    medium: 'https://medium.com/@goelarna',
     stackOverflow: 'https://stackoverflow.com/users/',
-    gitlab: 'https://gitlab.com/',
-    youtube: 'https://youtube.com/'
+    youtube: 'https://youtube.com/@arnavandmo'
 }
